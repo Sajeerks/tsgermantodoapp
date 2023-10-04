@@ -38,7 +38,7 @@ app.use(cookieParser())
 app.use(morgan("dev"))
 app.use(express.json())
 app.use(cors(
- {   origin: true,
+ {   origin: "https://tsgerman-sajeerks.vercel.app",
     credentials: true,}
    
     // {
@@ -69,12 +69,14 @@ app.use(cors(
 //         mongoUrl:env.MONGO_CONNECTION_STIRNG
 //     })
 // }))
-// app.set('trust proxy', 1)
+app.set('trust proxy', 1)
 app.use(session({
     secret: env.SESSION_SECRET,
     // secret:"ddddddddddd",
     resave: false,
     saveUninitialized: false,
+    // proxy: true, 
+    unset: 'destroy',
     // name: 'MyCoolWebAppCookieName',
     cookie: {
         // secure:true,
@@ -82,10 +84,10 @@ app.use(session({
         // path: '/',
         // httpOnly: true, secure: true, maxAge: 1000 * 60 * 60 * 48, sameSite: 'none',
         // httpOnly: true,
-        secure: false,
+        secure: true,
 
         maxAge: 60 * 60 * 1000,
-        // sameSite:"lax"
+        sameSite:"none"
         // secure: true, sameSite: "none" 
         // httpOnly:true,
         // sameSite:false,
@@ -95,11 +97,11 @@ app.use(session({
     store: MongoStore.create({
         mongoUrl: env.MONGO_CONNECTION_STIRNG,
         // collectionName: "sessions", ttl: 100, autoRemove: "native"
-        // dbName:"cool_nodes_app",
+        dbName:"cool_nodes_app",
         // ttl:14*24*60*60,
         // autoRemove:"native",
 
-        // collectionName: "sessions",
+        collectionName: "sessions",
         // stringify: false,
         // autoRemove: "interval",
         // autoRemoveInterval: 1

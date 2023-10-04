@@ -16,11 +16,11 @@ export const logout :RequestHandler= async(req, res,next)=>{
 }
 
 
-// export const sample :RequestHandler= async(req, res,next)=>{
-//   res.status(200).json({
-//     message:"all i sworking fine"
-//   })
-// }
+export const sample :RequestHandler= async(req, res,next)=>{
+  res.status(200).json({
+    message:"all i sworking fine"
+  })
+}
 
 
 

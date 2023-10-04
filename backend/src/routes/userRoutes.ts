@@ -12,7 +12,7 @@ router.post("/login" , userController.login)
 
 
 router.post("/logout" , userController.logout)
-// router.get("/sample" , userController.sample)
+router.get("/sample" , userController.sample)
 
 
 
