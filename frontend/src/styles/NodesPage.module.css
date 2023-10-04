@@ -1,0 +1,12 @@
+.node{
+height: 200px;
+min-width: 150px;
+transition:  box-shadow .2s ease-in-out;
+cursor: pointer;
+}
+
+
+
+.node:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
